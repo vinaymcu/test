@@ -1,0 +1,84 @@
+{
+	"rules": {
+		"STBManager.STB.serialNumber": {
+			"required": true,
+			"required-message": "Serial Number must be provided.",
+			"rangelength": [
+				5,
+				19
+			],
+			"rangelength-message": "Serial Number length must be >= 5 and <= 10"
+		},
+		"STBManager.STB.macAddress": {
+			"required": true,
+			"required-message": "MAC Address must be provided."
+		},
+		"STBManager.STB.ipAddress": {
+			"required": true,
+			"required-message": "IP Address must be provided.",
+			"rangelength": [
+				10,
+				20
+			],
+			"rangelength-message": "IP Address length must be >= 10 and <= 20"
+		},
+		"STBManager.STB.hwVersion": {
+			"required": true,
+			"required-message": "Hardware Version must be provided."
+		},
+		"STBManager.STB.swVersion": {
+			"required": true,
+			"required-message": "Software Version must be provided."
+		},
+		"STBManager.STB.uiVersion": {
+			"required": true,
+			"required-message": "Ui Version must be provided."
+		},
+		"STBManager.STB.sTBName": {
+			"required": true,
+			"required-message": "STB Name must be provided.",
+			"rangelength": [
+				5,
+				19
+			],
+			"rangelength-message": "STB Name length must be >= 5 and <= 10"
+		},
+		"STBManager.STB.assignedResources.resource": {
+			"rule-group": {
+				"placeholders": [
+					{
+						"property": "name",
+						"name": "resourceName"
+					}
+				],
+				"rules": {
+					"name": {
+						"required": true,
+						"required-message": "Resource  name must be provided.",
+						"custom": {
+							"className": "com.acn.avs.stb.repository.CustomResourcesRepository",
+							"method": "validateExistenceByName"
+						},
+						"custom-message": "Resource ( [[resourceName]] ) not found"
+					},
+					"unit": {
+						"required": true,
+						"required-message": "Resource ( [[resourceName]] ) unit must be provided.",
+						"range": [
+							512,
+							1024
+						],
+						"range-message": "Resource ( [[resourceName]] ) unit must be >= 512 and <= 1024"
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+

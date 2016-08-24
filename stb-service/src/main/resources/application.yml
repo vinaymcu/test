@@ -1,0 +1,24 @@
+ribbon:
+  eureka:
+    enabled: true  
+          
+endpoints:
+  restart:
+    enabled: true
+  refresh:
+    enabled: true
+    
+    
+    
+#Server configuration
+server:
+  port: ${port:8090}      
+  
+  
+spring:
+  rabbitmq:
+    addresses: localhost:5672
+#    host: 
+#    port: 
+#    username: 
+#    password:    

@@ -1,0 +1,56 @@
+#Discovery server hostname 
+discovery:
+  server:
+    url: http://localhost:8761/eureka/
+     
+#Server configuration
+server:
+  port: ${port:8020}   
+  
+spring:
+  application:
+    name:  STBSERVICE
+  profiles:
+    active: ${profile:DEV}
+  jmx:
+    default-domain: ${spring.application.name}
+  messages:
+    basename: classpath:messages/message
+  cloud:
+    config:
+      enabled: true
+      discovery:
+        enabled: true
+        service-id:  CONFIGSERVER
+      profile: ${profile:DEV}
+      fail-fast: true
+
+  cache:
+    jcache:
+      config: ehcache.xml
+ 
+ribbon:
+  eureka:
+    enabled: true  
+          
+endpoints:
+  restart:
+    enabled: true
+  refresh:
+    enabled: true
+    
+eureka:      
+  instance:
+    preferIpAddress: true
+    metadataMap:
+        cluster: DEFAULT_CLUSTER
+
+  client:
+    serviceUrl:
+      defaultZone: ${discovery.server.url}      
+
+
+common:
+  validation:
+    enabled: true
+        

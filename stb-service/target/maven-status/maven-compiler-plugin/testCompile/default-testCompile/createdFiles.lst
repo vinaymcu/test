@@ -1,0 +1,10 @@
+com\acn\avs\stb\testing\STBServiceUnitTest.class
+com\acn\avs\stb\Generator\RandomData.class
+com\acn\avs\stb\Generator\AbstractEntityGenerator.class
+com\acn\avs\stb\config\TestConfig.class
+com\acn\avs\stb\testing\PojoTest.class
+com\acn\avs\stb\testing\IncludeEntityFilter.class
+com\acn\avs\stb\Generator\AssignedResourcesGenerator.class
+com\acn\avs\stb\Generator\EntityGenerator.class
+com\acn\avs\stb\Generator\STBServiceGenerator.class
+com\acn\avs\stb\helper\MockCRMClient.class
